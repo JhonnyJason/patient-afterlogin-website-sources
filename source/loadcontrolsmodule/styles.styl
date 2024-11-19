@@ -1,0 +1,115 @@
+// loadcontrols styles
+.patient-table
+    #loadcontrols
+    #mindate-indication
+        pointer-events: none
+        opacity: 0
+        z-index: -1
+    #back-button
+        opacity 1
+        transform translateX(0)
+        pointer-events: all
+    #patient-name-indication
+        opacity 1
+        // transform translateX(-50%)
+        transform translateX(0)
+        pointer-events: all
+
+.patient-table.go-back
+    #back-button
+        opacity 0
+        transform translateX(-200px)
+        pointer-events: none
+
+    #patient-name-indication
+        opacity 0
+        transform translateX(-100vw)
+        pointer-events: none
+
+#patient-name-indication
+    pointer-events: none
+    transition: all 0.3s
+    opacity: 0
+    transform: translateX(-100vw)
+    position absolute
+    left 60px
+    top 17px
+    z-index: 99
+    color white
+    
+
+#back-button
+    pointer-events: none
+    transition: all 0.3s
+    opacity: 0
+    transform: translateX(-200px)
+    z-index: 99
+    position absolute
+    left 2px
+    top 5px
+    background-color cd-turquoise
+    color white
+    // background transparent
+    // color cd-turquoise
+    border-radius: 4px
+    padding 6px
+    // border solid 1px #d2d6dc
+    // color cd-darkblue
+    // width 40px
+    // height 40px
+    svg
+        height 30px
+        width 30px
+    
+#mindate-indication
+    transition: opacity 0.3s
+    position absolute
+    left 230px
+    top 27px
+    font-size 10pt
+
+#loadcontrols
+    position absolute
+    top 7px
+    // right 5px
+    right 0
+    display flex
+    align-items: center
+    z-index: 99
+
+    button
+        margin-right 10px
+        background-color cd-turquoise
+        color white
+        // background transparent
+        border-radius: 4px
+        width 31px
+        height 31px
+        svg
+            height 25px
+            width 25px
+        
+#choose-date-limit
+    background-color: white
+    font-size: 14px
+    padding 10px 3px 10px 10px
+    border-radius: 4px
+    border solid 1px #d2d6dc
+    option
+        padding 10px 13px
+
+#choose-date-limit:focus
+    background-color: white
+
+#refresh-button
+    padding 3px
+
+// #share-to-doctor-button
+//     color cd-darkblue
+
+@media screen and (max-width: 600px)
+    #loadcontrols
+        position relative
+        padding-top 5px
+        top 0
+        justify-content: flex-end

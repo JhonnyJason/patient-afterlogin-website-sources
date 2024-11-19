@@ -1,0 +1,33 @@
+
+//-############################################################
+svg#svgicon-definitions
+    defs
+        filter#svg-dropshadow-filter(height="130%" width="130%")
+            fegaussianblur(in="SourceGraphic" stddeviation="3" result="blurOut")
+            feColorMatrix(in="blurOut" type="saturate" values="0.25" result="shadowOut")
+            feblend(in='SourceGraphic' in2='shadowOut' mode='normal')
+
+//-############################################################
+svg#svgicon-symbols
+
+    symbol#svg-cross-icon(preserveAspectRatio="xMidYMid meet" viewBox='0 0 24 24')
+        path(fill='currentColor' d='M19,3H16.3H7.7H5A2,2 0 0,0 3,5V7.7V16.4V19A2,2 0 0,0 5,21H7.7H16.4H19A2,2 0 0,0 21,19V16.3V7.7V5A2,2 0 0,0 19,3M15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4L13.4,12L17,15.6L15.6,17Z')
+    
+    symbol#svg-menu-icon(preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24")
+        path(fill="currentColor", d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z")
+
+    symbol#svg-images-icon(preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24")
+        path(fill="currentColor" d="M22,16V4A2,2 0 0,0 20,2H8A2,2 0 0,0 6,4V16A2,2 0 0,0 8,18H20A2,2 0 0,0 22,16M11,12L13.03,14.71L16,11L20,16H8M2,6V20A2,2 0 0,0 4,22H18V20H4V6")
+
+    symbol#svg-documents-icon(preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24")
+        path(fill="currentColor" d="M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M15 7H20.5L15 1.5V7M8 0H16L22 6V18C22 19.11 21.11 20 20 20H8C6.89 20 6 19.1 6 18V2C6 .89 6.89 0 8 0M17 16V14H8V16H17M20 12V10H8V12H20Z")
+    
+    symbol#svg-overscan-icon(preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24")
+        path(fill="currentColor" d="M12 5.5L10 8H14L12 5.5M18 10V14L20.5 12L18 10M6 10L3.5 12L6 14V10M14 16H10L12 18.5L14 16M21 3H3C1.9 3 1 3.9 1 5V19C1 20.1 1.9 21 3 21H21C22.1 21 23 20.1 23 19V5C23 3.9 22.1 3 21 3M21 19H3V5H21V19Z")
+
+    symbol#svg-refresh-icon(preserveAspectRatio="xMidYMid meet" viewBox="0 -0.5 24 23.5")
+        path(fill="currentColor" d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z")
+
+    symbol#svg-chevron-left-icon(preserveAspectRatio="xMidYMid meet" viewBox="0 -0.5 24 23.5")
+        path(fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z")
+
