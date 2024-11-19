@@ -13,7 +13,7 @@ import * as S from "./statemodule.js"
 
 ############################################################
 import { requestSharesURL } from "./configmodule.js"
-import { ownSampleData, patientSampleData, doctorsSampleData } from "./sampledata.js"
+import { ownSampleData } from "./sampledata.js"
 
 import { dataLoadPageSize } from "./configmodule.js"
 
@@ -89,17 +89,5 @@ export setMinDateYearsBack = (yearsCount) ->
 
 ############################################################
 export getAllData = ->
-    if !allDataPromise? then allDataPromise = retrieveData(minDate, undefined)
+    if !allDataPromise? then allDataPromise = retrieveData()
     return allDataPromise
-
-export getDataForPatientId = (patientId) ->
-    if !patientDataPromise? then patientDataPromise = retrieveData(undefined, patientId)
-    return patientDataPromise
-
-############################################################
-export invalidatePatientData = ->
-    patientDataPromise = null
-    return
-
-############################################################
-export getMinDate = -> minDateFormatted

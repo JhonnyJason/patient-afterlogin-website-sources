@@ -227,8 +227,6 @@ export getTableHeight = ->
         nonTableOffset += gridJSFooter.offsetHeight
         nonTableOffset += outerPadding
         log nonTableOffset
-    if fullWidth <= 600
-        nonTableOffset += loadcontrols.offsetHeight
 
     tableHeight = fullHeight - nonTableOffset
     # olog {tableHeight, fullHeight, nonTableOffset, approvalHeight}
@@ -308,9 +306,6 @@ sendingDateHeadObj = {
 }
 
 #endregion
-
-export getStandardColumnObjects = (state) ->
-    return [patientIdHeadObj, isNewHeadObj, nameHeadObj, svnHeadObj, birthdayHeadObj, befundeHeadObj, bilderHeadObj, screeningDateHeadObj, radiologistHeadObj, sendingDateHeadObj]
 
 export getPatientsColumnObjects = (state) ->
     return [patientIdHeadObj, isNewHeadObj, befundeHeadObj, bilderHeadObj, screeningDateHeadObj, radiologistHeadObj]
