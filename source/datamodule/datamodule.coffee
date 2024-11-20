@@ -56,8 +56,10 @@ retrieveData = ->
 
     catch err
         log err
-        return utl.groupAndSort(ownSampleData)
+        # return utl.groupAndSort(ownSampleData)
+        return []
 
+        
 ############################################################
 export getAllData = ->
     if !allDataPromise? then allDataPromise = retrieveData()
