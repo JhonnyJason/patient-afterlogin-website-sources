@@ -30,8 +30,8 @@ patientDataPromise = null
 dataToShare = null
 
 ############################################################
-retrieveData = (minDate, patientId) ->
-    log "retrieveData #{minDate},#{patientId}"
+retrieveData = ->
+    log "retrieveData"
     try
         pageSize = dataLoadPageSize
         page = 1
@@ -40,7 +40,7 @@ retrieveData = (minDate, patientId) ->
         allData = []
 
         loop
-            requestData = {minDate, patientId, page, pageSize}
+            requestData = {page, pageSize}
             log "requesting -> "
             olog requestData
 
@@ -57,35 +57,6 @@ retrieveData = (minDate, patientId) ->
     catch err
         log err
         return utl.groupAndSort(ownSampleData)
-
-
-############################################################
-export setMinDateDaysBack = (daysCount) ->
-    log "setMinDateDaysBack #{daysCount}"
-    dateObj = dayjs().subtract(daysCount, "day")
-    minDate = dateObj.toJSON()
-    minDateFormatted = dateObj.format("DD.MM.YYYY")
-
-    allDataPromise = null
-    return
-
-export setMinDateMonthsBack = (monthsCount) ->
-    log "setMinDateMonthsBack #{monthsCount}"
-    dateObj = dayjs().subtract(monthsCount, "month")
-    minDate = dateObj.toJSON()
-    minDateFormatted = dateObj.format("DD.MM.YYYY")
-
-    allDataPromise = null
-    return
-
-export setMinDateYearsBack = (yearsCount) ->
-    log "setMinDateYearsBack #{yearsCount}"
-    dateObj = dayjs().subtract(yearsCount, "year")
-    minDate = dateObj.toJSON()
-    minDateFormatted = dateObj.format("DD.MM.YYYY")
-
-    allDataPromise = null
-    return
 
 ############################################################
 export getAllData = ->
