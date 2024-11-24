@@ -115,6 +115,12 @@ defaultSharesCompare = (el1, el2) ->
     date2 = dayjs(el2.createdAt)
     return -date1.diff(date2)
 
+patientSharesCompare = (el1, el2) ->
+    date1 = dayjs(el1.studyDate)
+    date2 = dayjs(el2.studyDate)
+    return -date1.diff(date2)
+
+
 ############################################################
 groudByStudyId = (data) ->
     ## TODO improve caching of Cases
@@ -159,7 +165,8 @@ groudByStudyId = (data) ->
 ############################################################
 export groupAndSort = (rawData) ->
     allData = groudByStudyId(rawData.flat())
-    return allData.sort(defaultSharesCompare)
+    # return allData.sort(defaultSharesCompare)
+    return allData.sort(patientSharesCompare)
 
 export prepareDoctorsList = (rawData) ->
     results = []
