@@ -8,11 +8,7 @@ import { createLogFunctions } from "thingy-debug"
 import dayjs from "dayjs"
 
 ############################################################
-import { requestSharesURL } from "./configmodule.js"
-import { sampleData } from "./sampledata.js"
-## TODO introduce more sampleData e.g. patientSampleData
-
-import { dataLoadPageSize } from "./configmodule.js"
+import { requestSharesURL, dataLoadPageSize } from "./configmodule.js"
 
 ############################################################
 StudyToEntry = {}
@@ -20,7 +16,8 @@ StudyToEntry = {}
 ############################################################
 #region merge Properties Functions
 mergeIsNew = (obj, share) ->
-    return true if obj.isNew or share.isNew or share.isNew == "true"
+    shareIsNew = (share.isNew? and share.isNew and share.isNew != "false")
+    return true if obj.isNew or shareIsNew
     return false
 
 mergePatientId = (obj, share) ->
@@ -91,7 +88,7 @@ mergeBefunde = (obj, share) ->
     return result unless share.documentUrl?
 
     if !(share.formatType == 4 or share.formatType == "4")
-        if share.isNew? then isNew = 1 else isNew = 0
+        if share.isNew? and share.isNew and share.isNew != "false" then isNew = 1 else isNew = 0
         result += "#{share.documentDescription} . #{share.documentUrl} . #{isNew} : "
 
     return result
@@ -102,7 +99,7 @@ mergeImages = (obj, share) ->
     return result unless share.documentUrl?
 
     if (share.formatType == 4 or share.formatType == "4")
-        if share.isNew? then isNew = 1 else isNew = 0
+        if share.isNew? and share.isNew and share.isNew != "false" then isNew = 1 else isNew = 0
         result += "#{share.documentDescription} . #{share.documentUrl} . #{isNew} : "
 
     return result
