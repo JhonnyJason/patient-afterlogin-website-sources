@@ -16,9 +16,8 @@ StudyToEntry = {}
 ############################################################
 #region merge Properties Functions
 mergeIsNew = (obj, share) ->
-    shareIsNew = (share.isNew? and share.isNew and share.isNew != "false")
-    return true if obj.isNew or shareIsNew
-    return false
+    shareIsNew = share.isNew? and share.isNew and share.isNew != "false"
+    return obj.isNew or shareIsNew
 
 mergePatientId = (obj, share) ->
     return share.patientId
@@ -88,7 +87,8 @@ mergeBefunde = (obj, share) ->
     return result unless share.documentUrl?
 
     if !(share.formatType == 4 or share.formatType == "4")
-        if share.isNew? and share.isNew and share.isNew != "false" then isNew = 1 else isNew = 0
+        if share.isNew? and share.isNew and share.isNew != "false" then isNew = 1 
+        else isNew = 0
         result += "#{share.documentDescription} . #{share.documentUrl} . #{isNew} : "
 
     return result
@@ -99,7 +99,8 @@ mergeImages = (obj, share) ->
     return result unless share.documentUrl?
 
     if (share.formatType == 4 or share.formatType == "4")
-        if share.isNew? and share.isNew and share.isNew != "false" then isNew = 1 else isNew = 0
+        if share.isNew? and share.isNew and share.isNew != "false" then isNew = 1 
+        else isNew = 0
         result += "#{share.documentDescription} . #{share.documentUrl} . #{isNew} : "
 
     return result
