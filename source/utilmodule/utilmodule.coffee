@@ -6,7 +6,7 @@ import { createLogFunctions } from "thingy-debug"
 
 ############################################################
 import * as tbut from "thingy-byte-utils"
-import libsodium from "libsodium-wrappers"
+# import libsodium from "libsodium-wrappers"
 
 ############################################################
 charMap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
@@ -20,8 +20,8 @@ sodium = null
 ############################################################
 export initialize = ->
     log "initialize"
-    await libsodium.ready
-    sodium = libsodium
+    # await libsodium.ready
+    # sodium = libsodium
     # olog Object.keys(sodium)
     prepareValidKeyCodesMap()
     return
